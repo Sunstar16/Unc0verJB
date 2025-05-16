@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- iOS-specific meta tags for PWA -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="iOS Boot Animation">
+    <link rel="apple-touch-icon" href="icon.png">
+    <!-- Link to the web app manifest -->
+    <link rel="manifest" href="manifest.json">
     <title>iOS Boot Animation</title>
     <style>
         body {
@@ -97,6 +104,15 @@
         setTimeout(() => {
             window.location.href = 'https://drive.google.com/uc?export=download&id=1fzQr3j6DbUZQXnaMk1tGYlKU-0-6rBoZ';
         }, 18000); // Redirect after 15 seconds of Apple logo
+
+        // Register the service worker for PWA
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(registration => console.log('Service Worker registered'))
+                    .catch(error => console.log('Service Worker registration failed:', error));
+            });
+        }
     </script>
 </body>
 </html>
