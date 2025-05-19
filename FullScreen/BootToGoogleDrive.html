@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- iOS-specific meta tags for PWA -->
@@ -29,6 +27,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            transform: translateY(-15%); /* Adjusted to match the second and third images */
         }
         .loader {
             width: 30px; /* Matches CydiaWeb's compact size */
@@ -65,6 +64,7 @@
             font-size: 16vh; /* Matches iOS boot logo’s prominence */
             font-family: -apple-system, sans-serif;
             /* No fadeIn animation */
+            transform: translateY(-15%); /* Adjusted to match the second and third images */
         }
         @keyframes load {
             0%, 100% { opacity: 1; }
@@ -114,5 +114,5 @@
             });
         }
     </script>
-</body>
-</html>
+
+</body></html>
